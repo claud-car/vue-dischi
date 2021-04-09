@@ -26,19 +26,19 @@
     <div class="container">
       <!-- V-if per impostare il filtro selezionato dal tag select,
        che visualizzerà soltanto i brani che hanno il genre uguale al select -->
-      <div v-for= "disk in sortedDisks(disks)" class="card"
+      <div v-for= "(disk,i) in sortedDisks(disks)" class="card"
       v-if="disk.genre === currentFilter || currentFilter === 'All' ">
         <div class="img">
-          <a href="https://www.youtube.com/watch?v=psFdqiPfhmg">Clicca per ascoltare</a>
-          <img :src="disk.poster" alt="">
-          <div class="card-title">
-            <p>Title: {{disk.title}}</p>
-            <span>Author: {{disk.author}}</span>
-          </div>
-          <div class="card-info">
-            <p>Genre: {{disk.genre}}</p>
-            <span>Year: {{disk.year}}</span>
-          </div>
+          <img class="prova" :src="disk.poster">
+          <a class="link" :href="links[i].src">Clicca per ascoltare</a>
+        </div>
+        <div class="card-title">
+          <p>Title: {{disk.title}}</p>
+          <span>Author: {{disk.author}}</span>
+        </div>
+        <div class="card-info">
+          <p>Genre: {{disk.genre}}</p>
+          <span>Year: {{disk.year}}</span>
         </div>
       </div>
     </div>
