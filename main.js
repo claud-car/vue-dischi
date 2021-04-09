@@ -81,7 +81,6 @@ var app = new Vue({
 // prova: function() {
 //   var a = ['zero', 'one', 'two', 'three'];
 //   var sliced = a.slice();
-//
 //   console.log(a);      // ['zero', 'one', 'two', 'three']
 //   console.log(sliced); // ['one', 'two']
 // }
