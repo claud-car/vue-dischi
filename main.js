@@ -4,7 +4,7 @@ var app = new Vue({
   el: '#root',
   data: {
     //Creato oggetto currentFilter impostato su all
-    //per poter visualizzare le canzoni filtrate
+    //per poter visualizzare i brani filtrati
     currentFilter: "All",
     disks: []
   },
@@ -13,8 +13,25 @@ var app = new Vue({
     .then((response) => {
       this.disks = response.data.response;
     })
-  }
-});
+  },//fine mounted
+  methods: {
+  //function per ordinare i brani in base all'anno di uscita
+  sortedDisks: function(arr) {
+    return arr.slice().sort(function(a, b) {
+      return a.year - b.year;
+    });
+  },
+}//fine methods
+});//fine vue
+
+
+// prova: function() {
+//   var a = ['zero', 'one', 'two', 'three'];
+//   var sliced = a.slice();
+//
+//   console.log(a);      // ['zero', 'one', 'two', 'three']
+//   console.log(sliced); // ['one', 'two']
+// }
 
 
 

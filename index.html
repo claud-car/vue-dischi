@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="./master.css">
-  <title>Vue disk</title>
+  <title>SpotiClaudiofy</title>
 </head>
 <body>
   <h1>SpotiClaudiofy</h1>
@@ -22,12 +22,14 @@
         <option value="Pop">Pop</option>
       </select>
     </div>
+    <!-- <button @click="prova" type="button" name="button"></button> -->
     <div class="container">
       <!-- V-if per impostare il filtro selezionato dal tag select,
-       che visualizzerà soltanto le canzoni che hanno il genre uguale al select -->
-      <div v-for= "disk in disks" class="card"
+       che visualizzerà soltanto i brani che hanno il genre uguale al select -->
+      <div v-for= "disk in sortedDisks(disks)" class="card"
       v-if="disk.genre === currentFilter || currentFilter === 'All' ">
         <div class="img">
+          <a href="https://www.youtube.com/watch?v=psFdqiPfhmg">Clicca per ascoltare</a>
           <img :src="disk.poster" alt="">
           <div class="card-title">
             <p>Title: {{disk.title}}</p>
